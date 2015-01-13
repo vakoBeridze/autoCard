@@ -20,7 +20,7 @@ public class Main {
 
     //    private static final String PATH = "/media/vako/9ff703fc-de93-4ccd-a733-ecf3867c3c3b/SHEMOWMEBULI BARATEBI SRULI-MANQANEBI-3 ASO 3 CIFRI/SERIA-NOMERI-NOMERI";
 //    private static final String PATH = "/media/vako/9ff703fc-de93-4ccd-a733-ecf3867c3c3b/Baratebi test/test";
-    private static final String PATH = "/media/vako/9ff703fc-de93-4ccd-a733-ecf3867c3c3b/SHEMOWMEBULI BARATEBI SRULI-MANQANEBI-3 ASO 3 CIFRI/NOMERI-NOMERI";
+    private static final String PATH = "/media/vako/9ff703fc-de93-4ccd-a733-ecf3867c3c3b/SABOLOOOOOOOOOOOO/MOTOCIKLEBI-2 ASO 4 CIFRI";
 
 
     public static void main(String[] args) {

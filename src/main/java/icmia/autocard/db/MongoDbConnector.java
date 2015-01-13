@@ -32,9 +32,11 @@ public class MongoDbConnector {
 
     public void removeAll() {
         System.out.println("remove All");
+        int i = 0;
         for (DBObject dbObject : getFiles()) {
             gridFS.remove(dbObject);
-            System.out.println("Removed file: " + dbObject.toString());
+//            System.out.println("Removed file " + (++i) + ": " + dbObject.toString());
+            System.out.println("Removed file " + (++i));
         }
         System.out.println("removed All");
     }
@@ -47,7 +49,7 @@ public class MongoDbConnector {
                 inputFile.put("series", names[0]);
                 inputFile.put("numberFrom", Integer.parseInt(names[1]));
                 inputFile.put("numberTo", Integer.parseInt(names[2]));
-                inputFile.put("numberType", 1); // 1 means normal car
+                inputFile.put("numberType", 2); // 1 ჩვეულებრივი მანქანა, 2 - მოტოციკლეტი, 3 - მისაბმელი
                 inputFile.setContentType("application/pdf");
             }
             inputFile.save();

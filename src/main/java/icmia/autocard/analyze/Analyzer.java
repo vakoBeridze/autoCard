@@ -21,6 +21,8 @@ public class Analyzer {
     private ArrayList<File> skippedFiles = new ArrayList<>();
     private ArrayList<MyException> exceptions = new ArrayList<>();
     private ArrayList<File> notRenamed = new ArrayList<>();
+    private int directorySerieLength = 2;
+    private int numberLength = 4;
 
     public Analyzer(String path, Structure structure, Uploader uploader) {
         this.path = path;
@@ -72,7 +74,7 @@ public class Analyzer {
 
     private void getFiles(File directory) {
         String directoryName = directory.getName();
-        if (directoryName.length() == 3) {
+        if (directoryName.length() == directorySerieLength) {
             System.out.println(directoryName);
         } else {
             skippedFiles.add(directory);
@@ -132,6 +134,7 @@ public class Analyzer {
     }
 
     private boolean checkIfValidNumber(int i) throws MyException {
+        // TODO თუ მოტოციკლეტია 10000
         if (i < 1 || i > 1000)
             throw new MyException(null);
         return true;
@@ -161,7 +164,7 @@ public class Analyzer {
             File directory;
             for (int i = 0; i < length; i++) {
                 directory = files[i];
-                if (directory.isDirectory() && directory.getName().length() == 3) {
+                if (directory.isDirectory() && directory.getName().length() == directorySerieLength) {
                     String fileName = directory.getName().toUpperCase();
                     System.out.println("(" + (i + 1) + " of " + length + ") renaming files in: " + fileName);
 
@@ -219,7 +222,7 @@ public class Analyzer {
 
     private String fillNumberWithCharacter(String number) {
         String myString = "" + number;
-        while (myString.length() < 3) {
+        while (myString.length() < numberLength) {
             myString = "0" + myString;
         }
         return myString;
